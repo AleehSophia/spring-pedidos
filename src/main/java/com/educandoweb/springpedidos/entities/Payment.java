@@ -1,5 +1,6 @@
 package com.educandoweb.springpedidos.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
@@ -16,6 +17,7 @@ public class Payment implements Serializable {
     private Instant moment;
 
     //    mapeamento de identidade para ter o mesmo id relacionamento um pra um - classe dependente
+    @JsonIgnore
     @OneToOne
     @MapsId
     private Order order;
